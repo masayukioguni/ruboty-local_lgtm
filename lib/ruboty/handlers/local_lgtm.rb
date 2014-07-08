@@ -5,15 +5,15 @@ module Ruboty
 
       def build(message)
         p message
-        #if url = search(message[:keyword])
-        # message.reply(url)
-        #end
+        if url = lgtm(message[:keyword])
+         message.reply(url)
+        end
       end
 
       private
 
-      def search(query)
-        Ruboty::GoogleImage::Client.new(query: query).get
+      def lgtm(image_url)
+        Ruboty::LocalLgtm::Client.new(image_url: image_url).get
       end
     end
   end
