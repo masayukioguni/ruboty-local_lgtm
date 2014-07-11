@@ -50,7 +50,7 @@ module Ruboty
         json = JSON.parse(res.body)
         File.delete(filename)
 
-        json["src"]
+        json["markdown"]
 
       end 
 
